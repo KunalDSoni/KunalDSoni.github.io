@@ -8,7 +8,7 @@ Personal site of Kunal D Soni - a software engineer. Life first (travel, food, b
 
 | File | Page |
 | --- | --- |
-| `index.html` | Home: time-of-day greeting, postcards from life, a short "by day" note, contact |
+| `index.html` | Home: intentionally blank for now (header + footer only) |
 | `work.html` | Companies (Astratech/BOTIM, Dopay, Mintoak, Novo, Pedagogy) and products built at each |
 | `case-botim.html`, `case-dopay.html`, `case-novo.html` | Case studies: problem → decisions → trade-offs → result |
 | `impact.html` | Results and advisory |
@@ -33,7 +33,7 @@ Then visit http://localhost:8000.
 
 `.github/workflows/site-checks.yml` runs on every push: HTML validation (`html-validate`),
 an offline link/asset check (`lychee`), and a guard that fails if key sections (the
-postcards, the time-of-day script, canonical/og tags, sitemap) disappear. Run the validator locally with:
+time-of-day script, canonical/og tags, sitemap) disappear. Run the validator locally with:
 
 ```bash
 npx html-validate "*.html"

@@ -1111,3 +1111,6 @@ html[data-time="night"] .life-photo__frame{box-shadow:0 6px 22px rgba(0,0,0,.45)
   .travel-videos.travel-videos--single{grid-template-columns:1fr}
   .travel-videos--single .life-photo__frame{padding:6px 6px 28px}
 }
+
+/* Blank homepage placeholder: keep the footer at the bottom of the screen */
+main.blank{min-height:calc(100vh - 160px)}
