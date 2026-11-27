@@ -1,6 +1,6 @@
 /* Archivo (variable, latin) - self-hosted. SIL Open Font License 1.1, see assets/fonts/README.md */
-@font-face{font-family:'Caveat Logo';font-style:normal;font-weight:600;font-display:swap;
-  src:url(assets/fonts/caveat-logo.woff2) format('woff2')}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:600;font-display:swap;
+  src:url(assets/fonts/caveat-latin.woff2) format('woff2')}
 @font-face{font-family:'Archivo';font-style:normal;font-weight:300 900;font-display:swap;
   src:url(assets/fonts/archivo-latin.woff2) format('woff2')}
 :root{
@@ -1224,5 +1224,13 @@ body > main{flex:1 0 auto}
 .role__co{margin-bottom:8px}
 
 /* Logo note back to handwriting ("Software Engineer"), as before */
-.logo__note{font-family:'Caveat Logo','Caveat',cursive;font-weight:600;font-size:18px;letter-spacing:0;text-transform:none;
+.logo__note{font-family:'Caveat',cursive;font-weight:600;font-size:18px;letter-spacing:0;text-transform:none;
   color:var(--script);transform:rotate(-3deg);transform-origin:left center;margin:2px 0 0 4px}
+
+/* All the small notes and captions: same handwriting as "Software Engineer" */
+.life-year__note,.life-love__caption,.life-photo figcaption,.books-cards .life-photo--book figcaption,.life-photo--big figcaption{
+  font-family:'Caveat',cursive;font-weight:600;letter-spacing:0;color:var(--script)}
+.life-year__note{font-size:21px;transform:rotate(-3deg);transform-origin:left center}
+.life-love__caption{font-size:24px;transform:rotate(-1.5deg);transform-origin:left center}
+.life-photo figcaption,.books-cards .life-photo--book figcaption,.life-photo--big figcaption{font-size:19px}
+@media (max-width:560px){.travel-videos .life-photo figcaption{font-size:16px}.books-cards .life-photo--book figcaption{font-size:15px}}
