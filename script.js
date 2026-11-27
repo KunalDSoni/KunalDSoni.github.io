@@ -127,28 +127,6 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
 })();
 
 // ---------------------------------------------------------------------------
-// Journey year bar: highlight the year in view and keep it scrolled into view
-(function(){
-  const bar = document.getElementById('yearbar');
-  if (!bar || !('IntersectionObserver' in window)) return;
-  const links = new Map([...bar.querySelectorAll('a')].map(a => [a.getAttribute('href').slice(1), a]));
-  let current = null;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const a = links.get(e.target.id);
-      if (!a || a === current) return;
-      current?.classList.remove('is-active');
-      a.classList.add('is-active');
-      current = a;
-      const left = a.offsetLeft - bar.clientWidth / 2 + a.clientWidth / 2;
-      bar.scrollTo({ left, behavior: 'smooth' });
-    });
-  }, { rootMargin: '-35% 0px -60% 0px' });
-  document.querySelectorAll('.year[id]').forEach(el => io.observe(el));
-})();
-
-// ---------------------------------------------------------------------------
 // Videos: only download + play while on screen (saves ~9 MB on the Life page)
 (function(){
   const vids = document.querySelectorAll('video[data-autoplay]');
