@@ -1229,3 +1229,6 @@ body > main{flex:1 0 auto}
 .life-love__caption{font-size:24px;transform:rotate(-1.5deg);transform-origin:left center}
 .life-photo figcaption,.books-cards .life-photo--book figcaption,.life-photo--big figcaption{font-size:19px}
 @media (max-width:560px){.travel-videos .life-photo figcaption{font-size:16px}.books-cards .life-photo--book figcaption{font-size:15px}}
+/* Work intro: one quiet line */
+.work-min__intro{font-size:16px;font-weight:500;line-height:1.5;letter-spacing:0;color:var(--muted);margin:0 0 20px;max-width:none;white-space:nowrap}
+@media (max-width:760px){.work-min__intro{white-space:normal;font-size:15px}}
