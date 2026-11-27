@@ -1,6 +1,6 @@
 # Kunal D Soni
 
-> Creative software engineer. Builds payment systems by day (12 years across QA, release engineering, and product in the UAE, US, and India); this site is mostly about life - travel, food, and books.
+> Software engineer. Builds payment systems by day (12 years across QA, release engineering, and product in the UAE, US, and India); this site is mostly about life - travel, food, and books.
 
 
 ## Pages

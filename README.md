@@ -1,6 +1,6 @@
 # Kunal D Soni — Personal Site
 
-Personal site of Kunal D Soni - a creative software engineer. Life first (travel, food, books), with work, case studies and impact one click away.
+Personal site of Kunal D Soni - a software engineer. Life first (travel, food, books), with work, case studies and impact one click away.
 
 **Live site:** https://kunaldsoni.github.io/
 
