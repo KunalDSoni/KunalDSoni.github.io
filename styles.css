@@ -1219,3 +1219,4 @@ body > main{flex:1 0 auto}
 .clock-note{transform:none;font-size:15px;font-weight:500;color:var(--muted)}
 .page__main.work-min{padding-top:72px}
 @media (max-width:760px){.page__main.work-min{padding-top:48px}}
+.role__co{margin-bottom:8px}
