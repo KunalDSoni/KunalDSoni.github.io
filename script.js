@@ -79,3 +79,50 @@ const svcIO = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.4 });
 if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe(el));
+
+// ---------------------------------------------------------------------------
+// Time-of-day colour mode (the <head> script already set html[data-time])
+(function(){
+  const root = document.documentElement;
+  const MODES = ['morning', 'noon', 'evening', 'night'];
+  const ICON = { morning: '☀️', noon: '🌤️', evening: '🌇', night: '🌙' };
+  const HELLO = { morning: 'Good morning.', noon: 'Good afternoon.', evening: 'Good evening.', night: 'Still up?' };
+  const THEME_COLOR = { morning: '#ffffff', noon: '#fff3e8', evening: '#fff8db', night: '#0e1016' };
+  const fromClock = () => {
+    const h = new Date().getHours();
+    return h >= 5 && h < 11 ? 'morning' : h >= 11 && h < 16 ? 'noon' : h >= 16 && h < 20 ? 'evening' : 'night';
+  };
+  let override = null;
+  try { override = sessionStorage.getItem('kds-time'); } catch (e) {}
+
+  function apply(mode){
+    root.setAttribute('data-time', mode);
+    const chip = document.getElementById('timeChip');
+    if (chip) {
+      chip.querySelector('.time-chip__icon').textContent = ICON[mode];
+      chip.querySelector('.time-chip__label').textContent = override ? mode : mode + ' · auto';
+      chip.setAttribute('aria-label', 'Colour mode: ' + mode + (override ? ' (picked)' : ' (follows your clock)') + '. Click to try another.');
+    }
+    const hello = document.getElementById('hello');
+    if (hello) hello.textContent = HELLO[fromClock()];
+    const note = document.getElementById('clockNote');
+    if (note) note.textContent = override
+      ? 'you picked ' + mode + ' - tap the chip again to go back to your clock'
+      : 'it’s ' + fromClock() + ' where you are, so this page is in ' + fromClock() + ' colours';
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', THEME_COLOR[mode]);
+  }
+
+  document.getElementById('timeChip')?.addEventListener('click', () => {
+    const current = override || fromClock();
+    const next = MODES[(MODES.indexOf(current) + 1) % MODES.length];
+    // after cycling through every mode, return to following the clock
+    override = next === fromClock() ? null : next;
+    try { override ? sessionStorage.setItem('kds-time', override) : sessionStorage.removeItem('kds-time'); } catch (e) {}
+    apply(override || fromClock());
+  });
+
+  apply(override || fromClock());
+  // keep following the clock if the tab stays open across a boundary
+  setInterval(() => { if (!override && root.getAttribute('data-time') !== fromClock()) apply(fromClock()); }, 60000);
+})();

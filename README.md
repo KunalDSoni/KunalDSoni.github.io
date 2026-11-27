@@ -1,6 +1,6 @@
 # Kunal D Soni — Personal Site
 
-Portfolio of Kunal D Soni, fintech software engineer (open to Senior QA, Product Owner, and Product Manager roles): work history, case studies, impact, CV and life.
+Personal site of Kunal D Soni - a creative software engineer. Life first (travel, food, books), with work, case studies and impact one click away.
 
 **Live site:** https://kunaldsoni.github.io/
 
@@ -8,11 +8,10 @@ Portfolio of Kunal D Soni, fintech software engineer (open to Senior QA, Product
 
 | File | Page |
 | --- | --- |
-| `index.html` | Home: intro, headline numbers, work timeline, case-study cards, contact |
+| `index.html` | Home: time-of-day greeting, postcards from life, a short "by day" note, contact |
 | `work.html` | Companies (Astratech/BOTIM, Dopay, Mintoak, Novo, Pedagogy) and products built at each |
 | `case-botim.html`, `case-dopay.html`, `case-novo.html` | Case studies: problem → decisions → trade-offs → result |
 | `impact.html` | Results and advisory |
-| `cv.html`, `Kunal-D-Soni-CV.pdf` | CV (web + PDF) |
 | `life.html` | Travel, food, books |
 | `startups.html`, `products.html` | Redirects to `work.html` (old links keep working) |
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
@@ -33,16 +32,26 @@ Then visit http://localhost:8000.
 ## Checks
 
 `.github/workflows/site-checks.yml` runs on every push: HTML validation (`html-validate`),
-an offline link/asset check (`lychee`), and a guard that fails if key sections (the work
-timeline, canonical/og tags, sitemap, CV) disappear. Run the validator locally with:
+an offline link/asset check (`lychee`), and a guard that fails if key sections (the
+postcards, the time-of-day script, canonical/og tags, sitemap) disappear. Run the validator locally with:
 
 ```bash
 npx html-validate "*.html"
 ```
 
-## Regenerating the CV PDF
+## Time-of-day colours
 
-Open `cv.html` in Chrome → Print → Save as PDF (A4, no headers/footers), save over `Kunal-D-Soni-CV.pdf`.
+A tiny script in each page's `<head>` sets `<html data-time="...">` from the visitor's local clock,
+and `styles.css` swaps colour tokens per value:
+
+| Time | `data-time` | Look |
+| --- | --- | --- |
+| 05:00-10:59 | `morning` | light |
+| 11:00-15:59 | `noon` | soft orange |
+| 16:00-19:59 | `evening` | warm yellow |
+| 20:00-04:59 | `night` | dark |
+
+The chip in the nav cycles through the modes for the current tab (then back to "auto").
 
 ## Changing the site URL
 

@@ -39,10 +39,11 @@ jobs:
       - name: Key sections still present
         run: |
           set -e
-          grep -q 'id="work-timeline"' index.html || { echo "::error::Work timeline missing from index.html"; exit 1; }
-          for f in index.html work.html impact.html case-botim.html case-dopay.html case-novo.html cv.html life.html; do
+          grep -q 'class="postcards"' index.html || { echo "::error::Postcards section missing from index.html"; exit 1; }
+          grep -q 'data-time' index.html || { echo "::error::Time-of-day theme script missing"; exit 1; }
+          for f in index.html work.html impact.html case-botim.html case-dopay.html case-novo.html life.html; do
             grep -q 'rel="canonical"' "$f" || { echo "::error::$f has no canonical tag"; exit 1; }
             grep -q 'property="og:image"' "$f" || { echo "::error::$f has no og:image"; exit 1; }
           done
-          test -f sitemap.xml && test -f 404.html && test -f Kunal-D-Soni-CV.pdf
+          test -f sitemap.xml && test -f 404.html
           if grep -nE 'href="#"' *.html; then echo "::error::Placeholder href=\"#\" links found"; exit 1; fi
