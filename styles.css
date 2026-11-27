@@ -1158,3 +1158,7 @@ body > main{flex:1 0 auto}
 .journey-head{padding-top:56px;padding-bottom:0}
 @media (max-width:760px){.journey-head{padding-top:40px}}
 .journey{padding-top:32px}
+/* Colour-mode button: just the icon, no circle */
+.time-chip{border:0;background:transparent;box-shadow:none;width:auto;height:auto;padding:4px}
+.time-chip:hover{transform:none;opacity:.75}
+@media (max-width:760px){.time-chip{width:auto;height:auto;padding:4px}}
