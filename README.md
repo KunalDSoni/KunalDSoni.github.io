@@ -8,7 +8,7 @@ Personal site of Kunal D Soni - a software engineer. Life first (travel, food, b
 
 | File | Page |
 | --- | --- |
-| `index.html` | Home: year-by-year journey 2008-2026 in chapters (edit each `<article class="year">`; remove `year--empty` once a year has a story) |
+| `index.html` | Home: year-by-year journey 2026 back to 2008 (newest first) in chapters (edit each `<article class="year">`; remove `year--empty` once a year has a story) |
 | `work.html` | Companies (Astratech/BOTIM, Dopay, Mintoak, Novo, Pedagogy) and products built at each |
 | `case-botim.html`, `case-dopay.html`, `case-novo.html` | Case studies: problem → decisions → trade-offs → result |
 | `impact.html` | Results and advisory |
