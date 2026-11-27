@@ -1162,3 +1162,5 @@ body > main{flex:1 0 auto}
 .time-chip{border:0;background:transparent;box-shadow:none;width:auto;height:auto;padding:4px}
 .time-chip:hover{transform:none;opacity:.75}
 @media (max-width:760px){.time-chip{width:auto;height:auto;padding:4px}}
+.year--empty{padding:8px 0}
+.year--empty::after{top:16px}
