@@ -978,7 +978,6 @@ html[data-time="night"] .svc__logo{background:#f2f1ec;border-radius:10px;padding
 .nav__links--right{margin-left:auto}
 
 /* Home: creative hero */
-.hello{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(34px,4vw,48px);color:var(--script);margin:0 0 6px;transform:rotate(-2deg)}
 .hero--hello{padding-bottom:60px}
 .hero--hello .hero__title{font-size:clamp(52px,8.4vw,120px)}
 .hero__sub{max-width:720px;margin:28px auto 0;font-size:clamp(18px,1.8vw,22px);line-height:1.5;color:var(--muted)}
@@ -1017,17 +1016,3 @@ html[data-time="night"] .svc__logo{background:#f2f1ec;border-radius:10px;padding
   .clock-note{font-size:20px}
 }
 .byday + .cta{background:transparent}
-
-/* Home: portrait that leans toward the cursor (driven by script.js via CSS vars) */
-.portrait{position:relative;width:136px;height:136px;margin:0 auto 22px;perspective:520px}
-.portrait__tilt{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;
-  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translate3d(var(--tx,0px),var(--ty,0px),0);
-  box-shadow:0 0 0 5px var(--frame),0 16px 34px rgba(0,0,0,.2);will-change:transform}
-.portrait__tilt img{width:118%;height:118%;max-width:none;margin:-9%;object-fit:cover;
-  transform:translate3d(calc(var(--tx,0px) * -1.4),calc(var(--ty,0px) * -1.4),0) scale(1.02)}
-.portrait__shine{position:absolute;inset:0;border-radius:50%;pointer-events:none;mix-blend-mode:soft-light;
-  background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.55),transparent 58%)}
-.portrait__shadow{position:absolute;left:18%;right:18%;bottom:-16px;height:12px;border-radius:50%;
-  background:rgba(0,0,0,.22);filter:blur(7px);transform:translateX(calc(var(--tx,0px) * -1.6))}
-html[data-time="night"] .portrait__shadow{background:rgba(0,0,0,.6)}
-@media (max-width:760px){.portrait{width:108px;height:108px}}

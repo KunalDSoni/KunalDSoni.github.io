@@ -86,7 +86,6 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
   const root = document.documentElement;
   const MODES = ['morning', 'noon', 'evening', 'night'];
   const ICON = { morning: '☀️', noon: '🌤️', evening: '🌇', night: '🌙' };
-  const HELLO = { morning: 'Good morning.', noon: 'Good afternoon.', evening: 'Good evening.', night: 'Still up?' };
   const THEME_COLOR = { morning: '#ffffff', noon: '#fff3e8', evening: '#fff8db', night: '#0e1016' };
   const fromClock = () => {
     const h = new Date().getHours();
@@ -103,8 +102,6 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
       chip.querySelector('.time-chip__label').textContent = override ? mode : mode + ' · auto';
       chip.setAttribute('aria-label', 'Colour mode: ' + mode + (override ? ' (picked)' : ' (follows your clock)') + '. Click to try another.');
     }
-    const hello = document.getElementById('hello');
-    if (hello) hello.textContent = HELLO[fromClock()];
     const note = document.getElementById('clockNote');
     if (note) note.textContent = override
       ? 'you picked ' + mode + ' - tap the chip again to go back to your clock'
@@ -125,41 +122,4 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
   apply(override || fromClock());
   // keep following the clock if the tab stays open across a boundary
   setInterval(() => { if (!override && root.getAttribute('data-time') !== fromClock()) apply(fromClock()); }, 60000);
-})();
-
-// ---------------------------------------------------------------------------
-// Portrait leans toward the cursor (one photo, faked 3D head-turn)
-(function(){
-  const el = document.getElementById('portrait');
-  if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const target = { x: 0, y: 0 }, cur = { x: 0, y: 0 };
-  let raf = null;
-  const clamp = v => Math.max(-1, Math.min(1, v));
-
-  function onMove(e){
-    const r = el.getBoundingClientRect();
-    const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-    target.x = clamp((e.clientX - cx) / (window.innerWidth * 0.45));
-    target.y = clamp((e.clientY - cy) / (window.innerHeight * 0.45));
-    if (!raf) raf = requestAnimationFrame(tick);
-  }
-  function reset(){ target.x = 0; target.y = 0; if (!raf) raf = requestAnimationFrame(tick); }
-
-  function tick(){
-    cur.x += (target.x - cur.x) * 0.12;
-    cur.y += (target.y - cur.y) * 0.12;
-    const s = el.style;
-    s.setProperty('--ry', (cur.x * 22).toFixed(2) + 'deg');
-    s.setProperty('--rx', (-cur.y * 16).toFixed(2) + 'deg');
-    s.setProperty('--tx', (cur.x * 9).toFixed(2) + 'px');
-    s.setProperty('--ty', (cur.y * 7).toFixed(2) + 'px');
-    s.setProperty('--gx', (50 + cur.x * 30).toFixed(1) + '%');
-    s.setProperty('--gy', (30 + cur.y * 30).toFixed(1) + '%');
-    const settled = Math.abs(target.x - cur.x) < 0.001 && Math.abs(target.y - cur.y) < 0.001;
-    raf = settled ? null : requestAnimationFrame(tick);
-  }
-
-  window.addEventListener('pointermove', onMove, { passive: true });
-  document.documentElement.addEventListener('pointerleave', reset);
-  window.addEventListener('blur', reset);
 })();
