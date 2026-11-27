@@ -142,3 +142,57 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
   }, { rootMargin: '200px 0px' });
   vids.forEach(v => io.observe(v));
 })();
+
+// ---------------------------------------------------------------------------
+// Home: my local time (Abu Dhabi) next to the visitor's - explains the colour mode
+(function(){
+  const el = document.getElementById('localTime');
+  if (!el || !window.Intl) return;
+  const HOME_TZ = 'Asia/Dubai';
+  const fmt = (tz) => new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: tz })
+    .format(new Date()).toLowerCase().replace(/\s/g, ' ');
+  let visitorTz = '';
+  try { visitorTz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+  function render(){
+    const mine = fmt(HOME_TZ);
+    const theirs = visitorTz ? fmt(visitorTz) : '';
+    el.innerHTML = (!theirs || theirs === mine)
+      ? '<b>' + mine + '</b> in Abu Dhabi — same as you'
+      : '<b>' + mine + '</b> in Abu Dhabi · <b>' + theirs + '</b> where you are';
+  }
+  render();
+  setInterval(render, 30000);
+})();
+
+// ---------------------------------------------------------------------------
+// Photos open full screen (Life page polaroids, journey photos). Click/Esc to close.
+(function(){
+  const imgs = document.querySelectorAll('.life-photo__frame img');
+  if (!imgs.length || typeof HTMLDialogElement !== 'function') return;
+  const dlg = document.createElement('dialog');
+  dlg.className = 'viewer';
+  dlg.innerHTML = '<img class="viewer__img" alt=""><p class="viewer__cap"></p><button type="button" class="viewer__close" aria-label="Close photo">×</button>';
+  document.body.appendChild(dlg);
+  const big = dlg.querySelector('.viewer__img'), cap = dlg.querySelector('.viewer__cap');
+  const largest = (img) => {
+    const set = img.getAttribute('srcset');
+    if (!set) return img.currentSrc || img.src;
+    return set.split(',').map(s => s.trim().split(/\s+/)[0]).pop();
+  };
+  function open(img){
+    big.src = largest(img);
+    big.alt = img.alt;
+    const fc = img.closest('figure')?.querySelector('figcaption');
+    cap.textContent = fc ? fc.textContent.trim() : '';
+    dlg.showModal();
+  }
+  imgs.forEach(img => {
+    img.tabIndex = 0;
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', 'Open photo: ' + (img.alt || 'photo'));
+    img.addEventListener('click', () => open(img));
+    img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); } });
+  });
+  dlg.addEventListener('click', () => dlg.close());
+  dlg.addEventListener('close', () => { big.removeAttribute('src'); });
+})();
