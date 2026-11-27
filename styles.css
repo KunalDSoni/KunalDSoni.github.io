@@ -964,3 +964,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   .cv__exp .job{break-inside:avoid}
   a{color:inherit}
 }
+
+/* Hero: roles open to */
+.hero__open{margin:28px auto 0;font-size:17px;color:var(--muted);letter-spacing:.01em}
+.hero__open strong{color:var(--ink);font-weight:700}
+@media (max-width:760px){.hero__open{font-size:15px;line-height:1.6}}

@@ -1,6 +1,6 @@
 # Kunal D Soni — Personal Site
 
-Portfolio of Kunal D Soni, Senior Fintech Product Manager: work history, case studies, impact, CV and life.
+Portfolio of Kunal D Soni, fintech software engineer (open to Senior QA, Product Owner, and Product Manager roles): work history, case studies, impact, CV and life.
 
 **Live site:** https://kunaldsoni.github.io/
 

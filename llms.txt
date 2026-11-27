@@ -1,6 +1,6 @@
 # Kunal D Soni
 
-> Senior Fintech Product Manager. 12 years building payments, remittance, cards, and digital banking products across the UAE, US, and India.
+> Fintech software engineer. 12 years across QA automation, release engineering, and product management for payments, remittance, cards, and digital banking in the UAE, US, and India. Open to Senior QA, Product Owner, and Product Manager roles.
 
 Headline results (BOTIM Ultra): onboarding conversion 9.7% → 18.8%, +215K active remittance users, 30-day retention 51% → 63%, ~19% YoY revenue growth from cohort-based dynamic pricing across 155+ corridors.
 
