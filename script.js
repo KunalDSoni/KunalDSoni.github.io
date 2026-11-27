@@ -99,7 +99,7 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
     const chip = document.getElementById('timeChip');
     if (chip) {
       chip.querySelector('.time-chip__icon').textContent = ICON[mode];
-      chip.querySelector('.time-chip__label').textContent = override ? mode : mode + ' · auto';
+      chip.title = mode + (override ? '' : ' · follows your clock');
       chip.setAttribute('aria-label', 'Colour mode: ' + mode + (override ? ' (picked)' : ' (follows your clock)') + '. Click to try another.');
     }
     const note = document.getElementById('clockNote');

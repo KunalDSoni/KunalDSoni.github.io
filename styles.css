@@ -970,11 +970,11 @@ html[data-time="night"] .life-photo__frame,html[data-time="night"] .beyond__phot
 html[data-time="night"] .svc__logo{background:#f2f1ec;border-radius:10px;padding:6px 10px}
 
 /* Time chip in the nav */
-.time-chip{display:inline-flex;align-items:center;gap:8px;margin-left:28px;padding:7px 14px;border-radius:999px;
+.time-chip{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;margin-left:28px;padding:0;border-radius:50%;
   border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 13px 'Archivo',sans-serif;cursor:pointer;
   transition:transform .25s var(--ease),background-color .8s var(--ease)}
 .time-chip:hover{transform:translateY(-2px)}
-.time-chip__icon{font-size:15px;line-height:1}
+.time-chip__icon{font-size:19px;line-height:1}
 .nav__links--right{margin-left:auto}
 
 /* Home: creative hero */
@@ -1004,8 +1004,7 @@ html[data-time="night"] .svc__logo{background:#f2f1ec;border-radius:10px;padding
   .postcards{grid-template-columns:repeat(2,1fr);gap:40px 28px}
 }
 @media (max-width:760px){
-  .time-chip{order:1;margin-left:auto;padding:6px 10px}
-  .time-chip__label{display:none}
+  .time-chip{order:1;margin-left:auto;width:36px;height:36px}
   .nav__toggle{order:2;margin-left:6px}
   .nav__links{order:3}
   .nav__links--right{margin-left:0}
