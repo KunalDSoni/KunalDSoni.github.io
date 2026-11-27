@@ -5,7 +5,7 @@
 
 ## Pages
 
-- [Home](https://kunaldsoni.github.io/): Home page (content coming soon)
+- [Home](https://kunaldsoni.github.io/): The journey, 2008-2026, year by year
 - [Work](https://kunaldsoni.github.io/work.html): Astratech (BOTIM Ultra), Dopay, Mintoak, Novo, Pedagogy - and the products built at each
 - [Case study: BOTIM Ultra](https://kunaldsoni.github.io/case-botim.html): Remittance onboarding, cohort pricing, payout automation
 - [Case study: Dopay](https://kunaldsoni.github.io/case-dopay.html): Payroll disbursement and card products for unbanked workers in MENA
