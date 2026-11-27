@@ -1015,3 +1015,5 @@ html[data-time="night"] .svc__logo{background:#f2f1ec;border-radius:10px;padding
   .clock-note{font-size:20px}
 }
 .byday + .cta{background:transparent}
+.travel-videos--single{grid-template-columns:1fr;max-width:720px}
+.travel-videos--single .life-photo__frame{aspect-ratio:4/3}
