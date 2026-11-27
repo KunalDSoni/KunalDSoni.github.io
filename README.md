@@ -2,7 +2,7 @@
 
 Portfolio of Kunal D Soni, Senior Fintech Product Manager: work history, case studies, impact, CV and life.
 
-**Live site:** https://kunaldsoni.github.io/Fintech/
+**Live site:** https://kunaldsoni.github.io/
 
 ## Structure
 
@@ -46,6 +46,6 @@ Open `cv.html` in Chrome → Print → Save as PDF (A4, no headers/footers), sav
 
 ## Changing the site URL
 
-All canonical / Open Graph / sitemap URLs use `https://kunaldsoni.github.io/Fintech/`. If the repo is
-renamed to `KunalDSoni.github.io` (or a custom domain is added), replace that string everywhere and
-update the `/Fintech/` paths in `404.html`.
+The repo is named `KunalDSoni.github.io`, so GitHub Pages serves it at the root:
+https://kunaldsoni.github.io/. All canonical / Open Graph / sitemap URLs use that address.
+If you add a custom domain, replace `https://kunaldsoni.github.io/` everywhere and add a `CNAME` file.
