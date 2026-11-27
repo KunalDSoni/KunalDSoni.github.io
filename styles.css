@@ -1060,3 +1060,54 @@ html[data-time="night"] .life-photo__frame{box-shadow:0 6px 22px rgba(0,0,0,.45)
   .photo-marquee .life-photo{flex-basis:62vw;width:62vw}
   .life-year__num{font-size:30px}
 }
+
+/* =====================================================================
+   Life page: tighter spacing; on desktop each section is title-left, photos-right
+   ===================================================================== */
+.page__main:has(.life){padding-top:84px}
+.page__main:has(.life) .page__head .display{margin:8px 0 10px}
+.page__main:has(.life) .page__head .lede{margin-bottom:0}
+.life{padding:8px 40px 24px}
+.life-year,.life-year--hero{padding:32px 0}
+.life-love{padding:32px 40px 8px}
+.life-love__more{margin-top:32px}
+.life-love__more .life-year__head--hero{margin-bottom:8px}
+.photo-marquee{padding:20px 0}
+@media (min-width:901px){
+  .life-year--hero{grid-template-columns:210px 1fr;gap:40px;align-items:start}
+  .life-year__head--hero,
+  .life-year__head--hero[style]{position:sticky;top:96px;flex-direction:column!important;align-items:flex-start;gap:6px}
+  .life-year__head--hero > div{flex-direction:column;gap:6px!important}
+  .life-year--hero .life-year__note{margin-left:0}
+  .life-year--hero .travel-videos,
+  .life-year--hero .books-cards{margin:0;padding:0;max-width:none}
+  .life-year--hero .travel-videos[style*="repeat(2"]{max-width:640px!important}
+  .life-year--hero .travel-videos--single{max-width:560px}
+  .life-year--hero .books-cards{grid-template-columns:repeat(4,1fr);max-width:none}
+  .life-year--hero .books-cards .life-photo--book:nth-child(7):nth-last-child(1){grid-column:auto}
+  .life-love{max-width:1180px}
+  .life-love__inner{grid-template-columns:1fr 1fr;gap:40px;max-width:none}
+  .life-photo--big{max-width:440px}
+  .life-love__more{max-width:1180px;padding:0 40px}
+}
+@media (max-width:900px){
+  .life{padding:8px 20px 24px}
+  .life-year,.life-year--hero{gap:12px;padding:24px 0}
+  .life-year--hero .travel-videos{margin-top:4px;padding:0;max-width:none}
+  .life-year__head--hero{gap:10px}
+}
+@media (max-width:560px){
+  .travel-videos{grid-template-columns:repeat(3,1fr);gap:10px}
+  .travel-videos .life-photo:nth-child(3){grid-column:auto;max-width:none;margin:0}
+  .travel-videos .life-photo__frame{padding:5px}
+  .travel-videos[style*="repeat(2"] .life-photo__frame{padding:6px 6px 26px}
+  .travel-videos .life-photo figcaption{font-size:15px}
+  .books-cards{grid-template-columns:repeat(3,1fr);gap:12px}
+  .books-cards .life-photo--book:nth-child(7):nth-last-child(1){grid-column:2;max-width:none}
+  .books-cards .life-photo--book .life-photo__frame{padding:5px}
+  .books-cards .life-photo--book figcaption{font-size:14px}
+}
+@media (max-width:560px){
+  .travel-videos.travel-videos--single{grid-template-columns:1fr}
+  .travel-videos--single .life-photo__frame{padding:6px 6px 28px}
+}
