@@ -1,4 +1,6 @@
 /* Archivo (variable, latin) - self-hosted. SIL Open Font License 1.1, see assets/fonts/README.md */
+@font-face{font-family:'Caveat Logo';font-style:normal;font-weight:600;font-display:swap;
+  src:url(assets/fonts/caveat-logo.woff2) format('woff2')}
 @font-face{font-family:'Archivo';font-style:normal;font-weight:300 900;font-display:swap;
   src:url(assets/fonts/archivo-latin.woff2) format('woff2')}
 :root{
@@ -1220,3 +1222,7 @@ body > main{flex:1 0 auto}
 .page__main.work-min{padding-top:72px}
 @media (max-width:760px){.page__main.work-min{padding-top:48px}}
 .role__co{margin-bottom:8px}
+
+/* Logo note back to handwriting ("Software Engineer"), as before */
+.logo__note{font-family:'Caveat Logo','Caveat',cursive;font-weight:600;font-size:18px;letter-spacing:0;text-transform:none;
+  color:var(--script);transform:rotate(-3deg);transform-origin:left center;margin:2px 0 0 4px}
