@@ -14,28 +14,28 @@ jobs:
   validate-html:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
       - name: Validate HTML
         run: npx --yes html-validate@9 "*.html"
 
   check-links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Check internal links and assets
         uses: lycheeverse/lychee-action@v2
         with:
           # --offline: only local files/anchors, so external sites being slow never fails the build
-          args: --offline --include-fragments --no-progress "*.html"
+          args: --offline --root-dir "${{ github.workspace }}" --include-fragments --no-progress "*.html"
           fail: true
 
   guard-content:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Key sections still present
         run: |
           set -e
