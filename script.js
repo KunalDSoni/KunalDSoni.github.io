@@ -35,7 +35,26 @@ vctrl?.addEventListener('click', () => {
   playing = !playing;
 });
 
-// Reveal on scroll
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Close the mobile menu with Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  const navEl = document.getElementById('nav');
+  if (navEl && navEl.classList.contains('is-open')) {
+    navEl.classList.remove('is-open');
+    document.getElementById('navToggle')?.setAttribute('aria-expanded', 'false');
+  }
+  if (document.activeElement && document.activeElement.closest('.has-submenu')) document.activeElement.blur();
+});
+
+// Autoplaying videos: don't play for reduced-motion users (they keep the poster frame)
+if (reduceMotion) {
+  document.querySelectorAll('video[autoplay]').forEach(v => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
+}
+
+// Reveal on scroll (skipped entirely for reduced-motion users)
+if (!reduceMotion && 'IntersectionObserver' in window) {
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.15 });
@@ -48,6 +67,7 @@ document.querySelectorAll('.card, .stat, .display, .lede, blockquote').forEach(e
 const style = document.createElement('style');
 style.textContent = `.in{opacity:1!important;transform:none!important}`;
 document.head.appendChild(style);
+}
 
 // Trigger hover-like state on .svc cards as they enter the viewport
 const svcIO = new IntersectionObserver((entries) => {
@@ -58,4 +78,4 @@ const svcIO = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.4 });
-document.querySelectorAll('.svc').forEach(el => svcIO.observe(el));
+if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe(el));

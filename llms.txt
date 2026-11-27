@@ -1,11 +1,16 @@
 # Kunal D Soni
 
-> Kunal D Soni - Senior Fintech Product Manager. 12 years building payments, remittance, cards, and digital banking products across UAE, US, and India.
+> Senior Fintech Product Manager. 12 years building payments, remittance, cards, and digital banking products across the UAE, US, and India.
+
+Headline results (BOTIM Ultra): onboarding conversion 9.7% → 18.8%, +215K active remittance users, 30-day retention 51% → 63%, ~19% YoY revenue growth from cohort-based dynamic pricing across 155+ corridors.
 
 ## Pages
 
-- [Kunal D Soni - Senior Fintech Product Manager](/): Kunal D Soni - Senior Fintech Product Manager. 12 years building payments, remittance, cards, and digital banking produc
-- [Impact - Kunal D Soni](/impact)
-- [Life - Kunal D Soni](/life)
-- [Products - Kunal D Soni](/products)
-- [Startups - Kunal D Soni](/startups)
+- [Home](https://kunaldsoni.github.io/Fintech/): Overview, headline results, and work history (2014 - present)
+- [Work](https://kunaldsoni.github.io/Fintech/work.html): Astratech (BOTIM Ultra), Dopay, Mintoak, Novo, Pedagogy - and the products built at each
+- [Case study: BOTIM Ultra](https://kunaldsoni.github.io/Fintech/case-botim.html): Remittance onboarding, cohort pricing, payout automation
+- [Case study: Dopay](https://kunaldsoni.github.io/Fintech/case-dopay.html): Payroll disbursement and card products for unbanked workers in MENA
+- [Case study: Novo](https://kunaldsoni.github.io/Fintech/case-novo.html): US SME digital banking - payment rails, onboarding automation, AML/fraud
+- [Impact](https://kunaldsoni.github.io/Fintech/impact.html): Results and startup advisory services
+- [CV](https://kunaldsoni.github.io/Fintech/cv.html): Full CV ([PDF](https://kunaldsoni.github.io/Fintech/Kunal-D-Soni-CV.pdf))
+- [Life](https://kunaldsoni.github.io/Fintech/life.html): Travel, food, and books

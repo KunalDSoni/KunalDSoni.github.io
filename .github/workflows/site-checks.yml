@@ -1,0 +1,48 @@
+name: Site checks
+
+# Runs on every push and PR so a bad commit (deleted sections, broken tags,
+# dead links) is caught before GitHub Pages publishes it.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate HTML
+        run: npx --yes html-validate@9 "*.html"
+
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check internal links and assets
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # --offline: only local files/anchors, so external sites being slow never fails the build
+          args: --offline --include-fragments --no-progress "*.html"
+          fail: true
+
+  guard-content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Key sections still present
+        run: |
+          set -e
+          grep -q 'id="work-timeline"' index.html || { echo "::error::Work timeline missing from index.html"; exit 1; }
+          for f in index.html work.html impact.html case-botim.html case-dopay.html case-novo.html cv.html life.html; do
+            grep -q 'rel="canonical"' "$f" || { echo "::error::$f has no canonical tag"; exit 1; }
+            grep -q 'property="og:image"' "$f" || { echo "::error::$f has no og:image"; exit 1; }
+          done
+          test -f sitemap.xml && test -f 404.html && test -f Kunal-D-Soni-CV.pdf
+          if grep -nE 'href="#"' *.html; then echo "::error::Placeholder href=\"#\" links found"; exit 1; fi

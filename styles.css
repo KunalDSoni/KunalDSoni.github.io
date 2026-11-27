@@ -20,7 +20,7 @@ body{
   line-height:1.5;
   font-weight:500;
 }
-img,video{display:block;max-width:100%}
+img,video{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 em{font-style:normal;font-family:'Archivo',sans-serif;font-weight:900}
 h1,h2,h3,h4,.display,.hero__title,.num,blockquote{font-family:'Archivo',sans-serif;font-weight:900;letter-spacing:-.01em}
@@ -847,4 +847,120 @@ h1,h2,h3,h4,.display,.hero__title,.num,blockquote{font-family:'Archivo',sans-ser
 @media (max-width:560px){
   .books-cards{grid-template-columns:1fr}
   .books-cards .life-photo--book:nth-child(7):nth-last-child(1){max-width:none}
+}
+
+/* =====================================================================
+   Additions (NEW branch): home stats, timeline CTA, beyond-work strip,
+   Work page, case studies, CV, accessibility, reduced motion, print
+   ===================================================================== */
+
+/* Accessibility */
+.skip-link{position:absolute;left:16px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-weight:600;transition:top .2s}
+.skip-link:focus{top:12px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* Buttons */
+.btn--outline{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn--outline:hover{background:var(--ink);color:#fff}
+.cta__actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:0}
+.lede--center{text-align:center;margin-left:auto;margin-right:auto}
+.lede--spaced{margin-top:32px}
+
+/* Home: stats strip */
+.stats--home{padding:40px 40px 100px}
+.stats__more{grid-column:1/-1;margin:8px 0 0;text-align:center}
+
+/* Home: timeline CV button */
+.timeline-wrap__cta{margin:48px 0 0}
+
+/* Home: cards are now <img> + whole-card link */
+.card{position:relative}
+.card__link{position:absolute;inset:0;z-index:2;border-radius:inherit}
+.card__media{width:100%;height:280px;object-fit:cover;display:block}
+.card:focus-within{box-shadow:0 0 0 3px var(--accent)}
+
+/* Home: beyond work strip */
+.beyond{background:var(--cream);padding:90px 40px}
+.beyond__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.beyond__title{font-size:clamp(28px,3.2vw,44px);line-height:1.08;letter-spacing:-.02em;margin:12px 0 22px}
+.beyond__photos{display:flex;justify-content:center}
+.beyond__photos img{width:32%;aspect-ratio:3/4;object-fit:cover;background:#fff;padding:8px 8px 26px;box-shadow:0 10px 26px rgba(0,0,0,.14);transform:rotate(var(--rot,0deg));margin:0 -10px}
+
+/* Work page */
+.work-list{display:flex;flex-direction:column;gap:28px;border-top:0;padding-top:24px;max-width:960px}
+.work-co h3{padding-right:200px;font-size:clamp(22px,2.4vw,30px);line-height:1.15;margin:0 0 8px}
+.work-co__role{font-weight:700;color:var(--ink);margin:0 0 18px}
+.work-co__about{margin:0 0 8px;border-top:1px solid var(--line);padding-top:14px}
+.work-co__about summary{cursor:pointer;font-weight:600;color:var(--accent);list-style-position:inside}
+.work-co__about p{color:var(--muted);font-size:16px;line-height:1.6}
+.built{margin-top:22px;border-top:1px solid var(--line);padding-top:18px}
+.built__item{margin-top:14px}
+.built__item .tag{margin:0 0 6px}
+.built__item h4{font-size:20px;margin:0 0 6px;letter-spacing:-.01em}
+.built__item p:not(.tag){color:var(--muted);font-size:16px;line-height:1.6;margin:0}
+.work-co__links{display:flex;gap:28px;flex-wrap:wrap;margin:22px 0 0}
+
+/* Case studies */
+.stats--case{grid-template-columns:repeat(3,1fr);padding:56px 0 24px}
+.stats--case .num{font-size:clamp(36px,4vw,56px)}
+.case__figure{max-width:520px;margin:24px auto 8px}
+.case__figure img{width:100%;height:auto;border-radius:var(--radius);box-shadow:0 30px 60px -30px rgba(0,0,0,.3)}
+.case__section{display:grid;grid-template-columns:80px 1fr;gap:24px;max-width:900px;margin:0 auto;padding:44px 0;border-top:1px solid var(--line)}
+.case__section h2{font-size:clamp(26px,3vw,38px);margin:0;letter-spacing:-.02em}
+.case__section .bullets{margin-top:18px}
+.case__num{font-size:14px;font-weight:700;color:var(--accent);letter-spacing:.18em;margin:10px 0 0}
+.case__next{max-width:900px;margin:0 auto;padding:24px 0 56px;border-top:1px solid var(--line);text-align:right}
+.case .cta--page,.cta--page{border-radius:var(--radius);padding:90px 32px}
+
+/* CV */
+.cv__actions{display:flex;gap:12px;justify-content:flex-end;max-width:860px;margin:0 auto 24px}
+.cv__sheet{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:56px 64px}
+.cv__head h1{font-size:44px;margin:0;letter-spacing:-.02em}
+.cv__title{font-weight:700;color:var(--accent);margin:6px 0 4px}
+.cv__contact{color:var(--muted);font-size:15px;margin:0}
+.cv__contact a{text-decoration:underline;text-underline-offset:3px}
+.cv__sheet section{margin-top:30px}
+.cv__sheet h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:8px;margin:0 0 14px;font-weight:800}
+.cv__sheet p,.cv__sheet li{font-size:15px;line-height:1.55}
+.cv__sheet ul{padding-left:18px;margin:0}
+.cv__exp .job{grid-template-columns:150px 1fr;gap:24px;padding:16px 0;border-bottom:1px solid var(--line)}
+.cv__exp .job:last-child{border-bottom:0}
+.cv__exp .job__when{font-size:12px;padding-top:4px}
+.cv__exp .job__body h3{font-size:18px;margin:0 0 2px}
+.cv__exp .job__co{margin:0 0 8px;font-size:14px}
+.cv__exp .job__body ul{font-size:14px}
+
+@media (max-width:900px){
+  .beyond__inner{grid-template-columns:1fr;text-align:center}
+  .stats--case{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .stats--home{padding:20px 20px 60px}
+  .beyond{padding:60px 20px}
+  .work-co > .tag{padding-right:120px}
+  .work-co h3{padding-right:0;margin-top:28px}
+  .case__section{grid-template-columns:1fr;gap:4px;padding:32px 0}
+  .stats--case{grid-template-columns:1fr}
+  .cv__sheet{padding:28px 20px}
+  .cv__exp .job{grid-template-columns:1fr;gap:4px}
+  .cta__actions .btn{width:100%;justify-content:center}
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .photo-marquee__track,.marquee__track{animation:none!important}
+  .card:hover,.svc:hover,.svc.svc--active,.life-photo:hover{transform:none}
+}
+
+/* Print (CV) */
+@media print{
+  @page{size:A4;margin:14mm}
+  .nav,.foot,.skip-link,.no-print{display:none!important}
+  body{background:#fff}
+  .page__main{padding:0}
+  .cv__sheet{border:0;padding:0;max-width:none}
+  .cv__exp .job{break-inside:avoid}
+  a{color:inherit}
 }
