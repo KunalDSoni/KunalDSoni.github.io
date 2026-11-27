@@ -26,8 +26,9 @@
 <meta name="twitter:image" content="https://kunaldsoni.github.io/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300..900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300..900&family=Caveat:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300..900&family=Caveat:wght@600;700&display=swap"></noscript>
+<link rel="stylesheet" href="styles.css?v=45b2dd68">
 <script>
   /* Colour mode follows the visitor's clock: morning 5-11, noon 11-16, evening 16-20, night 20-5 */
   (function(){var h=new Date().getHours(),t=h>=5&&h<11?'morning':h<16&&h>=11?'noon':h>=16&&h<20?'evening':'night';
@@ -38,7 +39,7 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="nav nav--solid" id="nav">
-  <a class="logo" href="index.html" aria-label="Kunal D Soni - home">
+  <a class="logo" href="index.html">
     <span>Kunal D Soni</span>
     <span class="logo__note" aria-hidden="true">
       <span class="logo__note-row">
@@ -83,13 +84,13 @@
       <div class="travel-videos" style="grid-template-columns:repeat(2,1fr);max-width:820px;">
         <figure class="life-photo" style="--rot:-3deg">
           <div class="life-photo__frame">
-            <img src="assets/life/burj-khalifa.jpg" alt="Burj Khalifa, Dubai" loading="lazy" width="1000" height="1169">
+            <img src="assets/life/burj-khalifa-600.jpg" srcset="assets/life/burj-khalifa-600.jpg 600w, assets/life/burj-khalifa.jpg 1000w" sizes="(max-width:560px) 45vw, 300px" alt="Burj Khalifa, Dubai" fetchpriority="high" width="1000" height="1169">
           </div>
           <figcaption>Burj Khalifa</figcaption>
         </figure>
         <figure class="life-photo" style="--rot:3deg">
           <div class="life-photo__frame">
-            <img src="assets/life/dubai-desert-safari.jpg" alt="Dubai desert safari" loading="lazy" style="object-position:25% center;" width="1400" height="1050">
+            <img src="assets/life/dubai-desert-safari-700.jpg" srcset="assets/life/dubai-desert-safari-700.jpg 700w, assets/life/dubai-desert-safari.jpg 1400w" sizes="(max-width:560px) 45vw, 300px" alt="Dubai desert safari" fetchpriority="high" style="object-position:25% center;" width="1400" height="1050">
           </div>
           <figcaption>Dubai desert safari</figcaption>
         </figure>
@@ -104,7 +105,7 @@
       <div class="travel-videos travel-videos--single">
         <figure class="life-photo" style="--rot:-2deg">
           <div class="life-photo__frame">
-            <img src="assets/life/ferrari-world-abu-dhabi.jpg" alt="Kunal at Ferrari World, Yas Island, Abu Dhabi" loading="lazy" width="1400" height="1050">
+            <img src="assets/life/ferrari-world-abu-dhabi-800.jpg" srcset="assets/life/ferrari-world-abu-dhabi-800.jpg 800w, assets/life/ferrari-world-abu-dhabi.jpg 1400w" sizes="(max-width:560px) 92vw, 560px" alt="Kunal at Ferrari World, Yas Island, Abu Dhabi" loading="lazy" width="1400" height="1050">
           </div>
           <figcaption>Ferrari World Abu Dhabi</figcaption>
         </figure>
@@ -119,17 +120,17 @@
       <div class="travel-videos">
         <figure class="life-photo" style="--rot:-3deg">
           <div class="life-photo__frame">
-            <video src="assets/video/airplane-1.mp4" poster="assets/video/airplane-1.jpg" autoplay muted loop playsinline preload="none" width="540" height="960"></video>
+            <video src="assets/video/airplane-1.mp4" poster="assets/video/airplane-1.jpg" data-autoplay muted loop playsinline preload="none" width="540" height="960"></video>
           </div>
         </figure>
         <figure class="life-photo" style="--rot:0deg">
           <div class="life-photo__frame">
-            <video src="assets/video/airplane-3.mp4" poster="assets/video/airplane-3.jpg" autoplay muted loop playsinline preload="none" width="540" height="960"></video>
+            <video src="assets/video/airplane-3.mp4" poster="assets/video/airplane-3.jpg" data-autoplay muted loop playsinline preload="none" width="540" height="960"></video>
           </div>
         </figure>
         <figure class="life-photo" style="--rot:3deg">
           <div class="life-photo__frame">
-            <video src="assets/video/airplane-2.mp4" poster="assets/video/airplane-2.jpg" autoplay muted loop playsinline preload="none" width="540" height="960"></video>
+            <video src="assets/video/airplane-2.mp4" poster="assets/video/airplane-2.jpg" data-autoplay muted loop playsinline preload="none" width="540" height="960"></video>
           </div>
         </figure>
       </div>
@@ -143,19 +144,19 @@
       <div class="travel-videos">
         <figure class="life-photo" style="--rot:-3deg">
           <div class="life-photo__frame">
-            <img src="assets/life/ahmedabad.jpg" alt="Ahmedabad" loading="lazy" width="1400" height="1050">
+            <img src="assets/life/ahmedabad-700.jpg" srcset="assets/life/ahmedabad-700.jpg 700w, assets/life/ahmedabad.jpg 1400w" sizes="(max-width:560px) 30vw, 280px" alt="Ahmedabad" loading="lazy" width="1400" height="1050">
           </div>
           <figcaption>Ahmedabad</figcaption>
         </figure>
         <figure class="life-photo" style="--rot:0deg">
           <div class="life-photo__frame">
-            <img src="assets/life/gateway-of-india.jpg" alt="Gateway of India, Mumbai" loading="lazy" width="1400" height="1050">
+            <img src="assets/life/gateway-of-india-700.jpg" srcset="assets/life/gateway-of-india-700.jpg 700w, assets/life/gateway-of-india.jpg 1400w" sizes="(max-width:560px) 30vw, 280px" alt="Gateway of India, Mumbai" loading="lazy" width="1400" height="1050">
           </div>
           <figcaption>Gateway of India</figcaption>
         </figure>
         <figure class="life-photo" style="--rot:3deg">
           <div class="life-photo__frame">
-            <img src="assets/life/antilia.jpg" alt="Antilia, Mumbai" loading="lazy" width="975" height="1300">
+            <img src="assets/life/antilia-600.jpg" srcset="assets/life/antilia-600.jpg 600w, assets/life/antilia.jpg 975w" sizes="(max-width:560px) 30vw, 280px" alt="Antilia, Mumbai" loading="lazy" width="975" height="1300">
           </div>
           <figcaption>Antilia</figcaption>
         </figure>
@@ -173,7 +174,7 @@
       </div>
       <figure class="life-photo life-photo--big" style="--rot:-2.5deg">
         <div class="life-photo__frame">
-          <img src="assets/life/gujarati-thali.jpg" alt="Gujarati thali" loading="lazy" width="1300" height="975">
+          <img src="assets/life/gujarati-thali-800.jpg" srcset="assets/life/gujarati-thali-800.jpg 800w, assets/life/gujarati-thali.jpg 1300w" sizes="(max-width:900px) 90vw, 440px" alt="Gujarati thali" loading="lazy" width="1300" height="975">
         </div>
         <figcaption>Gujarati thali (Plate)</figcaption>
       </figure>
@@ -277,6 +278,6 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=11453bf2"></script>
 </body>
 </html>

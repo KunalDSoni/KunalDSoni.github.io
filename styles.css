@@ -8,7 +8,7 @@
   --accent:#2222EE;
   --script:#3a3afc;
   --foot:#0b48f0;
-  --muted:#6b6b70;
+  --muted:#5c5c63;
   --line:rgba(0,0,0,.12);
   --radius:18px;
   --maxw:1320px;
@@ -952,11 +952,11 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
    ===================================================================== */
 html[data-time="noon"]{
   --paper:#fff3e8;--surface:#fffaf4;--frame:#fffdf9;--cream:#ffd8bd;--glow:rgba(255,190,140,.45);
-  --accent:#c2410c;--script:#d9480f;--foot:#c2410c;--muted:#7a6557;--line:rgba(120,60,10,.14);
+  --accent:#a8380a;--script:#a8380a;--foot:#a8380a;--muted:#6a5649;--line:rgba(120,60,10,.14);
 }
 html[data-time="evening"]{
   --paper:#fff8db;--surface:#fffcee;--frame:#fffef7;--cream:#ffe9a0;--glow:rgba(255,214,102,.45);
-  --accent:#8a5300;--script:#a86400;--foot:#8a5300;--muted:#75674a;--line:rgba(110,80,0,.16);
+  --accent:#8a5300;--script:#8a5300;--foot:#8a5300;--muted:#6b5d40;--line:rgba(110,80,0,.16);
 }
 html[data-time="night"]{
   --ink:#ecebe6;--paper:#0e1016;--surface:#171a23;--frame:#e9e7e1;--cream:#1d2130;--glow:rgba(120,140,255,.18);
@@ -1113,7 +1113,8 @@ html[data-time="night"] .life-photo__frame{box-shadow:0 6px 22px rgba(0,0,0,.45)
 }
 
 /* Blank homepage placeholder: keep the footer at the bottom of the screen */
-main.blank{min-height:calc(100vh - 160px)}
+body{min-height:100vh;display:flex;flex-direction:column}
+body > main{flex:1 0 auto}
 
 /* =====================================================================
    Home: year-by-year journey (2008-2026), grouped into chapters
@@ -1156,3 +1157,7 @@ main.blank{min-height:calc(100vh - 160px)}
   .year{grid-template-columns:52px 1fr;gap:26px}
   .year::before{left:65px}.year::after{left:61px}
 }
+
+.work-co > h2{font-family:'Archivo',sans-serif;font-weight:700;padding-right:200px;font-size:clamp(22px,2.4vw,30px);line-height:1.15;margin:0 0 8px;letter-spacing:-.01em;transition:color .3s}
+.svc:hover > h2,.svc.svc--active > h2{color:var(--accent)}
+@media (max-width:760px){.work-co > h2{padding-right:0;margin-top:28px;font-size:20px}}

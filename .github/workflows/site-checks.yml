@@ -45,4 +45,6 @@ jobs:
             grep -q 'property="og:image"' "$f" || { echo "::error::$f has no og:image"; exit 1; }
           done
           test -f sitemap.xml && test -f 404.html
+          python3 scripts/version-assets.py
+          git diff --exit-code -- '*.html' || { echo "::error::CSS/JS version tags are stale - run: python3 scripts/version-assets.py"; exit 1; }
           if grep -nE 'href="#"' *.html; then echo "::error::Placeholder href=\"#\" links found"; exit 1; fi

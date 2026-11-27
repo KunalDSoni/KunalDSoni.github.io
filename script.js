@@ -59,6 +59,8 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
 }, { threshold: 0.15 });
 document.querySelectorAll('.card, .stat, .display, .lede, blockquote').forEach(el => {
+  // anything already on screen at load stays visible (no fade = faster first paint)
+  if (el.getBoundingClientRect().top < window.innerHeight) return;
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
   el.style.transition = 'opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1)';
@@ -144,4 +146,21 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
     });
   }, { rootMargin: '-35% 0px -60% 0px' });
   document.querySelectorAll('.year[id]').forEach(el => io.observe(el));
+})();
+
+// ---------------------------------------------------------------------------
+// Videos: only download + play while on screen (saves ~9 MB on the Life page)
+(function(){
+  const vids = document.querySelectorAll('video[data-autoplay]');
+  if (!vids.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) { vids.forEach(v => { v.controls = true; }); return; }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+      else v.pause();
+    });
+  }, { rootMargin: '200px 0px' });
+  vids.forEach(v => io.observe(v));
 })();

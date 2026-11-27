@@ -29,6 +29,11 @@ python3 -m http.server 8000
 
 Then visit http://localhost:8000.
 
+## Updating CSS or JS
+
+After editing `styles.css` or `script.js`, run `python3 scripts/version-assets.py` so every page links the new version
+(`styles.css?v=<hash>`) and visitors don't get a cached copy. CI fails if you forget.
+
 ## Checks
 
 `.github/workflows/site-checks.yml` runs on every push: HTML validation (`html-validate`),

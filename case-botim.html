@@ -26,8 +26,9 @@
 <meta name="twitter:image" content="https://kunaldsoni.github.io/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300..900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300..900&family=Caveat:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300..900&family=Caveat:wght@600;700&display=swap"></noscript>
+<link rel="stylesheet" href="styles.css?v=45b2dd68">
 <script>
   /* Colour mode follows the visitor's clock: morning 5-11, noon 11-16, evening 16-20, night 20-5 */
   (function(){var h=new Date().getHours(),t=h>=5&&h<11?'morning':h<16&&h>=11?'noon':h>=16&&h<20?'evening':'night';
@@ -38,7 +39,7 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="nav nav--solid" id="nav">
-  <a class="logo" href="index.html" aria-label="Kunal D Soni - home">
+  <a class="logo" href="index.html">
     <span>Kunal D Soni</span>
     <span class="logo__note" aria-hidden="true">
       <span class="logo__note-row">
@@ -152,6 +153,6 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=11453bf2"></script>
 </body>
 </html>
