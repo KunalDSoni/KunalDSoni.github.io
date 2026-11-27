@@ -1157,3 +1157,4 @@ body > main{flex:1 0 auto}
 .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .journey-head{padding-top:56px;padding-bottom:0}
 @media (max-width:760px){.journey-head{padding-top:40px}}
+.journey{padding-top:32px}
