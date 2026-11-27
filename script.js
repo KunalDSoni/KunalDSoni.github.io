@@ -89,6 +89,11 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
   const MODES = ['morning', 'noon', 'evening', 'night'];
   const ICON = { morning: '☀️', noon: '🌤️', evening: '🌇', night: '🌙' };
   const THEME_COLOR = { morning: '#ffffff', noon: '#fff3e8', evening: '#fff8db', night: '#0e1016' };
+  // favicon follows the colour mode too: [background, letters]
+  const ICON_COLORS = { morning: ['#ffffff', '#2222EE'], noon: ['#fff3e8', '#a8380a'], evening: ['#fff8db', '#8a5300'], night: ['#0e1016', '#9aabff'] };
+  const iconSvg = (bg, fg) => 'data:image/svg+xml,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect x="1.5" y="1.5" width="61" height="61" rx="14" fill="' + bg +
+    '" stroke="' + fg + '" stroke-opacity=".35" stroke-width="3"/><text x="32" y="43" text-anchor="middle" font-family="Archivo, Helvetica Neue, Arial, sans-serif" font-weight="800" font-size="29" fill="' + fg + '" letter-spacing="-1">KS</text></svg>');
   const fromClock = () => {
     const h = new Date().getHours();
     return h >= 5 && h < 11 ? 'morning' : h >= 11 && h < 16 ? 'noon' : h >= 16 && h < 20 ? 'evening' : 'night';
@@ -110,6 +115,8 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
       : 'it’s ' + fromClock() + ' where you are, so this page is in ' + fromClock() + ' colours';
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', THEME_COLOR[mode]);
+    const icon = document.querySelector('link[rel="icon"][type="image/svg+xml"]');
+    if (icon) icon.setAttribute('href', iconSvg(...ICON_COLORS[mode]));
   }
 
   document.getElementById('timeChip')?.addEventListener('click', () => {
@@ -141,27 +148,6 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
     });
   }, { rootMargin: '200px 0px' });
   vids.forEach(v => io.observe(v));
-})();
-
-// ---------------------------------------------------------------------------
-// Home: my local time (Abu Dhabi) next to the visitor's - explains the colour mode
-(function(){
-  const el = document.getElementById('localTime');
-  if (!el || !window.Intl) return;
-  const HOME_TZ = 'Asia/Dubai';
-  const fmt = (tz) => new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: tz })
-    .format(new Date()).toLowerCase().replace(/\s/g, ' ');
-  let visitorTz = '';
-  try { visitorTz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
-  function render(){
-    const mine = fmt(HOME_TZ);
-    const theirs = visitorTz ? fmt(visitorTz) : '';
-    el.innerHTML = (!theirs || theirs === mine)
-      ? '<b>' + mine + '</b> in Abu Dhabi — same as you'
-      : '<b>' + mine + '</b> in Abu Dhabi · <b>' + theirs + '</b> where you are';
-  }
-  render();
-  setInterval(render, 30000);
 })();
 
 // ---------------------------------------------------------------------------

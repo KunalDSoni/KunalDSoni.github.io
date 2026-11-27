@@ -1173,13 +1173,8 @@ body > main{flex:1 0 auto}
 /* Journey: show only years with a story; hide a chapter when none of its years has one */
 .year--empty{display:none}
 .chapter-group:not(:has(.year:not(.year--empty))){display:none}
-.journey .chapter-group:first-of-type .chapter{padding-top:8px}
+.journey .chapter-group:first-of-type .chapter{padding-top:40px}
 
-/* Home: "8:14 pm in Abu Dhabi · 4:44 pm where you are" */
-.localtime{max-width:900px;margin:0 auto;padding:40px 40px 0;font-size:14px;letter-spacing:.02em;color:var(--muted)}
-.localtime b{color:var(--ink);font-weight:600}
-.localtime:empty{display:none}
-@media (max-width:760px){.localtime{padding:28px 20px 0;font-size:13px}}
 
 /* Work: one calm page */
 .work-min{max-width:900px}
