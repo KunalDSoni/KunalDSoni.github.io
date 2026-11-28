@@ -1193,6 +1193,20 @@ body > main{flex:1 0 auto}
 /* Journey: show only years with a story; hide a chapter when none of its years has one */
 .year--empty{display:none}
 .chapter-group:not(:has(.year:not(.year--empty))){display:none}
+
+/* Journey dots on phones: a tap pops the year's dot with a ring and keeps it lit (plus a haptic tick, see script.js) */
+@media (hover:none) and (pointer:coarse){
+  .year{-webkit-tap-highlight-color:transparent}
+  .year::after{transition:transform .35s cubic-bezier(.3,1.6,.5,1),box-shadow .35s ease}
+  .year.is-current::after{transform:scale(1.45);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
+  .year.is-tapped::after{animation:dot-pop .55s cubic-bezier(.3,1.6,.5,1)}
+}
+@keyframes dot-pop{
+  0%{transform:scale(1);box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 45%,transparent)}
+  35%{transform:scale(1.9)}
+  100%{transform:scale(1.45);box-shadow:0 0 0 14px transparent}
+}
+@media (prefers-reduced-motion:reduce){.year::after{transition:none!important;animation:none!important}}
 .journey .chapter-group:first-of-type .chapter{padding-top:40px}
 
 

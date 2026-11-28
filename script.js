@@ -190,3 +190,35 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
   dlg.addEventListener('click', () => dlg.close());
   dlg.addEventListener('close', () => { big.removeAttribute('src'); });
 })();
+
+// Story timeline dots on phones: tapping a year pops its dot (it stays lit) with a haptic tick. iOS Safari has no vibrate API, but toggling a hidden <input switch> from a tap gives the
+// system haptic (iOS 18+); Android uses navigator.vibrate.
+(function(){
+  const years = [...document.querySelectorAll('.journey .year:not(.year--empty)')];
+  if (!years.length || !matchMedia('(hover:none) and (pointer:coarse)').matches) return;
+
+  let tick = () => {};
+  if (navigator.vibrate) {
+    tick = () => navigator.vibrate(10);
+  } else {
+    const label = document.createElement('label');
+    label.setAttribute('aria-hidden', 'true');
+    label.style.cssText = 'position:fixed;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;left:-9px;top:0';
+    const sw = document.createElement('input');
+    sw.type = 'checkbox'; sw.setAttribute('switch', ''); sw.tabIndex = -1;
+    label.appendChild(sw);
+    document.body.appendChild(label);
+    tick = () => label.click();
+  }
+
+  let current = null;
+  years.forEach(y => y.addEventListener('click', e => {
+    if (e.target.closest('a, button')) return;
+    tick();
+    current?.classList.remove('is-current');
+    y.classList.add('is-current'); current = y;
+    y.classList.remove('is-tapped'); void y.offsetWidth; y.classList.add('is-tapped');
+  }));
+  years.forEach(y => y.addEventListener('animationend', () => y.classList.remove('is-tapped')));
+
+})();
