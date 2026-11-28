@@ -1126,7 +1126,7 @@ body > main{flex:1 0 auto}
    ===================================================================== */
 .journey-head{max-width:820px;margin:0 auto;padding:84px 40px 12px;text-align:center}
 .journey-head .display{margin:8px 0 10px}
-.journey{max-width:900px;margin:0 auto;padding:24px 40px 80px}
+.journey{width:fit-content;max-width:900px;margin:0 auto;padding:24px 40px 80px}
 .chapter{padding:40px 0 8px;border-bottom:1px solid var(--line)}
 .chapter__span{margin:0;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--accent)}
 .chapter__name{margin:6px 0 10px;font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.02em}
