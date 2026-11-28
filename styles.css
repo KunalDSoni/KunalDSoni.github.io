@@ -1226,6 +1226,7 @@ body > main{flex:1 0 auto}
 .role__when{margin:4px 0 0;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted)}
 .role__co{margin:0;font-size:24px;font-weight:800;letter-spacing:-.02em}
 .role__co span{font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:6px}
+.role__co .brand,.role__co .brand span{font-size:inherit;color:inherit;margin-left:0;letter-spacing:0}
 .role__title{margin:4px 0 10px;font-size:15px;font-weight:600;color:var(--accent)}
 .role__line{margin:0 0 14px;font-size:16px;line-height:1.6;color:var(--muted);max-width:620px}
 .role__nums{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
