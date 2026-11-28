@@ -1137,16 +1137,24 @@ body > main{flex:1 0 auto}
 .year__text{margin:-.09em 0 0;font-size:14px;line-height:1.55;color:var(--ink)}
 .wordmark-abudhabi{display:inline-block;height:1.25em;aspect-ratio:425/76;vertical-align:-0.03em;background-color:currentColor;-webkit-mask:url(assets/abu-dhabi.png) center/contain no-repeat;mask:url(assets/abu-dhabi.png) center/contain no-repeat}
 .wordmark-dubai{display:inline-block;height:1.2em;aspect-ratio:396/151;vertical-align:-0.15em;background-color:currentColor;-webkit-mask:url(assets/dubai.png) center/contain no-repeat;mask:url(assets/dubai.png) center/contain no-repeat}
-.wordmark-abudhabi,.wordmark-dubai{margin-block:-.3em}
-.logo-novo{--novo:#3e44da;display:inline-flex;align-items:flex-end;gap:.3em;height:1.1em;vertical-align:-0.04em;color:inherit;text-decoration:none;border-radius:4px;outline-offset:3px}
-.logo-novo__arch,.logo-novo__word{display:block;height:100%;background-color:currentColor;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
-.logo-novo__arch{aspect-ratio:48/50;background-color:var(--novo);-webkit-mask-image:url(assets/novo-arch.png);mask-image:url(assets/novo-arch.png);transform-origin:50% 100%}
-.logo-novo__word{aspect-ratio:136/50;-webkit-mask-image:url(assets/novo-word.png);mask-image:url(assets/novo-word.png)}
-.logo-novo__go{align-self:center;font-size:.8em;color:var(--novo);opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s;white-space:nowrap}
-.logo-novo:hover .logo-novo__arch,.logo-novo:focus-visible .logo-novo__arch{transform:translateY(-3px) scaleY(1.08)}
-.logo-novo:hover .logo-novo__go,.logo-novo:focus-visible .logo-novo__go{opacity:1;transform:none}
-[data-time="night"] .logo-novo{--novo:#7a80ff}
-@media (prefers-reduced-motion:reduce){.logo-novo *{transition:none!important}}
+.wordmark-abudhabi,.wordmark-dubai{margin-top:-.3em}
+/* company logos on the story timeline: the word takes the theme's text colour, the brand mark keeps its colour */
+.brand{display:inline-flex;align-items:center;vertical-align:var(--va);margin-top:-.5em;color:inherit;text-decoration:none;border-radius:4px;outline-offset:3px}
+.brand__logo{position:relative;display:block;height:var(--h);aspect-ratio:var(--ar)}
+.brand__ink,.brand__colour{position:absolute;inset:0}
+.brand__ink{background:currentColor;-webkit-mask:var(--ink) center/contain no-repeat;mask:var(--ink) center/contain no-repeat}
+.brand__colour{background:var(--colour) center/contain no-repeat;transform-origin:50% 100%;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.brand__go{display:block;max-width:0;overflow:hidden;white-space:nowrap;font-size:.8em;color:var(--brand);opacity:0;transition:max-width .35s ease,opacity .25s,margin .35s}
+.brand:hover .brand__colour,.brand:focus-visible .brand__colour{transform:translateY(-3px)}
+.brand:hover .brand__go,.brand:focus-visible .brand__go{max-width:9em;opacity:1;margin-left:.5em}
+.brand--novo{--h:1.1em;--ar:3.94;--va:-.04em;--brand:#3e44da;--ink:url(assets/novo-ink.png);--colour:url(assets/novo-colour.png)}
+.brand--mintoak{--h:1.16em;--ar:4.8485;--va:-.085em;--brand:#5f9e34;--ink:url(assets/mintoak-ink.png);--colour:url(assets/mintoak-colour.png)}
+.brand--pedagogy{--h:1.91em;--ar:3.6757;--va:-.52em;--brand:#e26a2c;--ink:url(assets/pedagogy-ink.png);--colour:url(assets/pedagogy-colour.png);margin-bottom:-.7em}
+.brand--botim{--h:1.1em;--ar:3.5;--va:-.035em;--brand:#2b3be6;--ink:url(assets/botim-ink.png);--colour:url(assets/botim-colour.png)}
+[data-time="night"] .brand--novo{--brand:#7a80ff}
+[data-time="night"] .brand--botim{--brand:#8a93ff}
+[data-time="night"] :is(.brand--novo,.brand--botim) .brand__colour{filter:brightness(1.6)}
+@media (prefers-reduced-motion:reduce){.brand *{transition:none!important}}
 .year__photo{max-width:380px;margin-top:16px}
 .year__photo .life-photo__frame{aspect-ratio:4/3}
 .year--empty{padding:12px 0}
