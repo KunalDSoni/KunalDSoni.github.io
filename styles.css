@@ -1135,6 +1135,8 @@ body > main{flex:1 0 auto}
 .year::after{content:"";position:absolute;left:92px;top:30px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
 .year__num{margin:0;font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
 .year__text{margin:4px 0 0;font-size:18px;line-height:1.55;color:var(--ink)}
+.year__link{color:inherit;font-weight:600;border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
+.year__link:hover{color:var(--accent);border-color:var(--accent)}
 .year__photo{max-width:380px;margin-top:16px}
 .year__photo .life-photo__frame{aspect-ratio:4/3}
 .year--empty{padding:12px 0}
