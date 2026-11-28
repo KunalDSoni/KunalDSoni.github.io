@@ -1238,3 +1238,11 @@ body > main{flex:1 0 auto}
 .life-love__more .life-year__note{margin-left:0}
 .photo-marquee{position:relative;z-index:0}
 .life-love .life-love__more{padding-left:0;padding-right:0}
+/* single portrait video (Goa) */
+.life-year--hero .travel-videos--portrait,.travel-videos--portrait{max-width:280px}
+.travel-videos--portrait .life-photo__frame{aspect-ratio:9/16;padding:8px 8px 34px}
+@media (max-width:560px){.travel-videos.travel-videos--portrait{grid-template-columns:1fr;max-width:62vw}}
+/* Asha's photo strip: starts at the same left line as the heading, stays inside the content column */
+.life-love__more .photo-marquee{width:auto;margin-left:0;margin-right:0;padding:12px 0 20px}
+.life-love__more .photo-marquee .life-photo{flex:0 0 280px;width:280px;padding:0 22px 0 0}
+@media (max-width:760px){.life-love__more .photo-marquee .life-photo{flex-basis:62vw;width:62vw;padding-right:14px}}

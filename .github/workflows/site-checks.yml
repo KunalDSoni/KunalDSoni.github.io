@@ -39,8 +39,10 @@ jobs:
       - name: Key sections still present
         run: |
           set -e
-          grep -q 'data-time' index.html || { echo "::error::Time-of-day theme script missing"; exit 1; }
-          for f in index.html work.html life.html; do
+          # home page lives in story.html; index.html only redirects to it
+          grep -q 'url=story.html' index.html || { echo "::error::index.html no longer redirects to story.html"; exit 1; }
+          grep -q 'data-time' story.html || { echo "::error::Time-of-day theme script missing"; exit 1; }
+          for f in story.html work.html life.html; do
             grep -q 'rel="canonical"' "$f" || { echo "::error::$f has no canonical tag"; exit 1; }
             grep -q 'property="og:image"' "$f" || { echo "::error::$f has no og:image"; exit 1; }
           done

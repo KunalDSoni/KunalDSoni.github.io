@@ -31,3 +31,6 @@ build/
 # Original phone photos (convert to JPEG in assets/ before use)
 *.heic
 *.HEIC
+# Original phone videos (convert to MP4 in assets/video before use)
+*.MOV
+*.mov
