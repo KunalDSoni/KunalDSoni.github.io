@@ -1132,8 +1132,8 @@ body > main{flex:1 0 auto}
 .chapter__name{margin:6px 0 10px;font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.02em}
 .year{position:relative;display:grid;grid-template-columns:110px 1fr;gap:28px;padding:20px 0 20px;scroll-margin-top:100px}
 .year::before{content:"";position:absolute;left:96px;top:0;bottom:0;width:1px;background:var(--line)}
-.year::after{content:"";position:absolute;left:92px;top:24px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
-.year__num{margin:0;font-size:16px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.year::after{content:"";position:absolute;left:92px;top:22px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.year__num{margin:0;font-size:14px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
 .year__text{margin:4px 0 0;font-size:14px;line-height:1.55;color:var(--ink)}
 .wordmark-abudhabi{display:inline-block;height:1.25em;aspect-ratio:425/76;vertical-align:-0.3em;background-color:currentColor;-webkit-mask:url(assets/abu-dhabi.png) center/contain no-repeat;mask:url(assets/abu-dhabi.png) center/contain no-repeat}
 .year__photo{max-width:380px;margin-top:16px}
@@ -1147,7 +1147,7 @@ body > main{flex:1 0 auto}
     .journey{padding:16px 20px 60px}
   .year{grid-template-columns:64px 1fr;gap:18px}
   .year::before{left:52px}.year::after{left:48px}
-  .year__num{font-size:15px}
+  .year__num{font-size:14px}
   .year--empty .year__num{font-size:16px}
   .year__text{font-size:14px}
 }
@@ -1301,3 +1301,4 @@ body > main{min-width:0;width:100%}
 .philo__line{margin:0 auto 10px;font-weight:700;font-size:clamp(13px,2vw,16px);line-height:1.3;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
 .philo__line:last-child{margin-bottom:0}
 @media (max-width:340px){.philo__line{white-space:normal}}
+.journey{padding-bottom:0}
