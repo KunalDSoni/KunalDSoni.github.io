@@ -1312,3 +1312,13 @@ body > main{min-width:0;width:100%}
   .philo__circle li{padding:12px 18px}
   .philo__next{margin-top:64px;padding:40px 22px}
 }
+/* Chennai: each photo keeps its own shape (no square crop), all the same height;
+   column widths follow each photo's aspect ratio (3:4, 4:3, 4:3) */
+.life-year--hero .travel-videos--natural,.travel-videos--natural{grid-template-columns:.75fr 1.333fr 1.333fr;max-width:880px;width:100%;align-items:start}
+.travel-videos--natural .life-photo__frame{aspect-ratio:auto;padding:8px}
+.travel-videos--natural .life-photo__frame img{width:100%;height:auto;object-fit:contain}
+@media (max-width:560px){
+  .travel-videos.travel-videos--natural{grid-template-columns:1fr;gap:22px;max-width:none;width:100%}
+  .travel-videos.travel-videos--natural .life-photo:nth-child(1){width:75%;max-width:none;margin:0;justify-self:center}
+  .travel-videos--natural .life-photo__frame{padding:6px}
+}
