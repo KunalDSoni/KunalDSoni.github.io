@@ -1130,9 +1130,9 @@ body > main{flex:1 0 auto}
 .chapter{padding:40px 0 8px;border-bottom:1px solid var(--line)}
 .chapter__span{margin:0;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--accent)}
 .chapter__name{margin:6px 0 10px;font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.02em}
-.year{position:relative;display:grid;grid-template-columns:110px 1fr;gap:28px;padding:20px 0 20px;scroll-margin-top:100px}
+.year{position:relative;display:grid;grid-template-columns:110px 1fr;gap:28px;padding:7px 0;scroll-margin-top:100px}
 .year::before{content:"";position:absolute;left:96px;top:0;bottom:0;width:1px;background:var(--line)}
-.year::after{content:"";position:absolute;left:92px;top:22px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.year::after{content:"";position:absolute;left:92px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
 .year__num{margin:0;font-size:14px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
 .year__text{margin:4px 0 0;font-size:14px;line-height:1.55;color:var(--ink)}
 .wordmark-abudhabi{display:inline-block;height:1.25em;aspect-ratio:425/76;vertical-align:-0.03em;background-color:currentColor;-webkit-mask:url(assets/abu-dhabi.png) center/contain no-repeat;mask:url(assets/abu-dhabi.png) center/contain no-repeat}
