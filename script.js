@@ -98,8 +98,11 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
     const h = new Date().getHours();
     return h >= 5 && h < 11 ? 'morning' : h >= 11 && h < 16 ? 'noon' : h >= 16 && h < 20 ? 'evening' : 'night';
   };
-  // a click previews another mode until the next page load; the clock always wins after that
-  let override = null;
+  // a picked mode is remembered across every page (and open tabs) until the visitor cycles back to their clock
+  const KEY = 'ks-colour-mode';
+  const load = () => { try { const v = localStorage.getItem(KEY); return MODES.includes(v) ? v : null; } catch (e) { return null; } };
+  const save = v => { try { v ? localStorage.setItem(KEY, v) : localStorage.removeItem(KEY); } catch (e) {} };
+  let override = load();
 
   function apply(mode){
     root.setAttribute('data-time', mode);
@@ -124,8 +127,14 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
     const next = MODES[(MODES.indexOf(current) + 1) % MODES.length];
     // after cycling through every mode, return to following the clock
     override = next === fromClock() ? null : next;
+    save(override);
     apply(override || fromClock());
   });
+
+  // a pick made in another tab applies here too
+  window.addEventListener('storage', e => { if (e.key === KEY || e.key === null) { override = load(); apply(override || fromClock()); } });
+  // pages restored from the back/forward cache pick up a change made elsewhere
+  window.addEventListener('pageshow', e => { if (e.persisted) { override = load(); apply(override || fromClock()); } });
 
   apply(override || fromClock());
   // keep following the clock if the tab stays open across a boundary
