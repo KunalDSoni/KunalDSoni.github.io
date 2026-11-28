@@ -1151,6 +1151,7 @@ body > main{flex:1 0 auto}
 .brand__colour{background:var(--colour) center/contain no-repeat;transform-origin:50% 100%;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
 .brand__go{display:block;max-width:0;overflow:hidden;white-space:nowrap;font-size:.8em;color:var(--brand);opacity:0;transition:max-width .35s ease,opacity .25s,margin .35s}
 .brand:hover .brand__colour,.brand:focus-visible .brand__colour{transform:translateY(-3px)}
+.brand--botim:hover .brand__colour,.brand--botim:focus-visible .brand__colour{transform:none}
 .brand:hover .brand__go,.brand:focus-visible .brand__go{max-width:9em;opacity:1;margin-left:.5em}
 .brand--novo{--h:1.1em;--ar:3.94;--va:-.04em;--brand:#3e44da;--ink:url(assets/novo-ink.svg);--colour:url(assets/novo-colour.svg)}
 .brand--mintoak{--h:1.16em;--ar:4.8485;--va:-.085em;--brand:#5f9e34;--ink:url(assets/mintoak-ink.svg);--colour:url(assets/mintoak-colour.png)}
