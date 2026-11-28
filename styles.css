@@ -1263,3 +1263,7 @@ body > main{min-width:0;width:100%}
 .life-year--strip .life-year__head--hero{position:static!important;flex-direction:row!important;align-items:baseline;flex-wrap:wrap;gap:6px 16px;margin-bottom:8px}
 .life-year--strip .life-year__note{margin-left:0}
 .life-year--strip .photo-marquee{min-width:0}
+/* Asha's strip: slightly bigger photos */
+.life-love__more .photo-marquee .life-photo{flex:0 0 340px;width:340px;padding-right:24px}
+.life-love__more .photo-marquee .life-photo__frame{padding:10px}
+@media (max-width:760px){.life-love__more .photo-marquee .life-photo{flex-basis:74vw;width:74vw;padding-right:14px}}
