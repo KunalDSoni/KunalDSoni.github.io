@@ -98,8 +98,8 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
     const h = new Date().getHours();
     return h >= 5 && h < 11 ? 'morning' : h >= 11 && h < 16 ? 'noon' : h >= 16 && h < 20 ? 'evening' : 'night';
   };
+  // a click previews another mode until the next page load; the clock always wins after that
   let override = null;
-  try { override = sessionStorage.getItem('kds-time'); } catch (e) {}
 
   function apply(mode){
     root.setAttribute('data-time', mode);
@@ -124,7 +124,6 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
     const next = MODES[(MODES.indexOf(current) + 1) % MODES.length];
     // after cycling through every mode, return to following the clock
     override = next === fromClock() ? null : next;
-    try { override ? sessionStorage.setItem('kds-time', override) : sessionStorage.removeItem('kds-time'); } catch (e) {}
     apply(override || fromClock());
   });
 

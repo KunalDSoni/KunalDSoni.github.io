@@ -54,7 +54,7 @@ and `styles.css` swaps colour tokens per value:
 | 16:00-19:59 | `evening` | warm yellow |
 | 20:00-04:59 | `night` | dark |
 
-The chip in the nav cycles through the modes for the current tab (then back to "auto").
+The icon in the nav previews the other modes; a reload always goes back to the visitor's clock.
 
 ## Changing the site URL
 
