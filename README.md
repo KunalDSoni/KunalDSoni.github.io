@@ -8,7 +8,7 @@ Personal site of Kunal D Soni - a software engineer. Life first (travel, food, b
 
 | File | Page |
 | --- | --- |
-| `index.html` | Home: year-by-year journey 2026 back to 2008 (newest first) in chapters (edit each `<article class="year">`; remove `year--empty` once a year has a story) |
+| `story.html` | Home (root `index.html` redirects here): year-by-year journey 2026 back to 2008 (newest first) in chapters (edit each `<article class="year">`; remove `year--empty` once a year has a story) |
 | `work.html` | One page: roles at Astratech/BOTIM, Dopay, Mintoak, Novo, Pedagogy, with key results |
 | `life.html` | Travel, food, books |
 | `startups.html`, `products.html`, `impact.html`, `case-*.html` | Redirects to `work.html` (old links keep working) |
