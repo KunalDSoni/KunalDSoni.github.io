@@ -1135,22 +1135,14 @@ body > main{flex:1 0 auto}
 .year::after{content:"";position:absolute;left:92px;top:12px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
 .year__num{margin:0;font-size:14px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
 .year__text{margin:-.09em 0 0;font-size:14px;line-height:1.55;color:var(--ink)}
-.wordmark-abudhabi{display:inline-block;height:1.25em;aspect-ratio:425/76;vertical-align:-0.03em;background-color:currentColor;-webkit-mask:url(assets/abu-dhabi.png) center/contain no-repeat;mask:url(assets/abu-dhabi.png) center/contain no-repeat}
-.wordmark-dubai{display:inline-block;height:1.2em;aspect-ratio:396/151;vertical-align:-0.15em;background-color:currentColor;-webkit-mask:url(assets/dubai.png) center/contain no-repeat;mask:url(assets/dubai.png) center/contain no-repeat}
+.wordmark-abudhabi{display:inline-block;height:1.25em;aspect-ratio:424/76;vertical-align:-0.03em;background-color:currentColor;-webkit-mask:url(assets/abu-dhabi.svg) center/contain no-repeat;mask:url(assets/abu-dhabi.svg) center/contain no-repeat}
+.wordmark-dubai{display:inline-block;height:1.2em;aspect-ratio:794/302;vertical-align:-0.15em;background-color:currentColor;-webkit-mask:url(assets/dubai.svg) center/contain no-repeat;mask:url(assets/dubai.svg) center/contain no-repeat}
 .wordmark-abudhabi,.wordmark-dubai{margin-top:-.3em}
 .surprise-box{display:inline-block;height:1.6em;width:auto;vertical-align:-.1em;margin-top:-.6em}
 .surprise{all:unset;display:inline-block;cursor:pointer;border-radius:4px;line-height:0}
 .surprise:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .surprise[hidden]{display:none}
-.surprise .surprise-box{transform-origin:50% 90%}
-.surprise:hover .surprise-box,.surprise:focus-visible .surprise-box{animation:gift-wiggle .6s ease}
-.surprise.is-opening .surprise-box{animation:gift-open .55s ease-in forwards}
-.surprise__reveal{animation:surprise-in .5s ease both}
 .surprise__reveal:focus{outline:none}
-@keyframes gift-wiggle{25%{transform:rotate(-9deg)}50%{transform:rotate(8deg)}75%{transform:rotate(-4deg)}}
-@keyframes gift-open{30%{transform:scale(1.25) rotate(-8deg)}55%{transform:scale(1.3) rotate(8deg)}100%{transform:scale(0) rotate(30deg);opacity:0}}
-@keyframes surprise-in{from{opacity:0;filter:blur(4px)}to{opacity:1;filter:none}}
-@media (prefers-reduced-motion:reduce){.surprise .surprise-box,.surprise__reveal{animation:none!important}}
 /* company logos on the story timeline: the word takes the theme's text colour, the brand mark keeps its colour */
 .brand{display:inline-flex;align-items:center;vertical-align:var(--va);margin-top:-.5em;color:inherit;text-decoration:none;border-radius:4px;outline-offset:3px}
 .brand__logo{position:relative;display:block;height:var(--h);aspect-ratio:var(--ar)}
@@ -1159,11 +1151,12 @@ body > main{flex:1 0 auto}
 .brand__colour{background:var(--colour) center/contain no-repeat;transform-origin:50% 100%;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
 .brand__go{display:block;max-width:0;overflow:hidden;white-space:nowrap;font-size:.8em;color:var(--brand);opacity:0;transition:max-width .35s ease,opacity .25s,margin .35s}
 .brand:hover .brand__colour,.brand:focus-visible .brand__colour{transform:translateY(-3px)}
+.brand--botim:hover .brand__colour,.brand--botim:focus-visible .brand__colour{transform:none}
 .brand:hover .brand__go,.brand:focus-visible .brand__go{max-width:9em;opacity:1;margin-left:.5em}
-.brand--novo{--h:1.1em;--ar:3.94;--va:-.04em;--brand:#3e44da;--ink:url(assets/novo-ink.png);--colour:url(assets/novo-colour.png)}
-.brand--mintoak{--h:1.16em;--ar:4.8485;--va:-.085em;--brand:#5f9e34;--ink:url(assets/mintoak-ink.png);--colour:url(assets/mintoak-colour.png)}
-.brand--pedagogy{--h:1.91em;--ar:3.6757;--va:-.52em;--brand:#e26a2c;--ink:url(assets/pedagogy-ink.png);--colour:url(assets/pedagogy-colour.png);margin-bottom:-.7em}
-.brand--botim{--h:1.1em;--ar:3.5;--va:-.035em;--brand:#2b3be6;--ink:url(assets/botim-ink.png);--colour:url(assets/botim-colour.png)}
+.brand--novo{--h:1.1em;--ar:3.94;--va:-.04em;--brand:#3e44da;--ink:url(assets/novo-ink.svg);--colour:url(assets/novo-colour.svg)}
+.brand--mintoak{--h:1.16em;--ar:4.8485;--va:-.085em;--brand:#5f9e34;--ink:url(assets/mintoak-ink.svg);--colour:url(assets/mintoak-colour.png)}
+.brand--pedagogy{--h:1.91em;--ar:3.6757;--va:-.52em;--brand:#e26a2c;--ink:url(assets/pedagogy-ink.svg);--colour:url(assets/pedagogy-colour.png);margin-bottom:-.7em}
+.brand--botim{--h:1.1em;--ar:3.5;--va:-.035em;--brand:#2b3be6;--ink:url(assets/botim-ink.svg);--colour:url(assets/botim-colour.svg)}
 [data-time="night"] .brand--novo{--brand:#7a80ff}
 [data-time="night"] .brand--botim{--brand:#8a93ff}
 [data-time="night"] :is(.brand--novo,.brand--botim) .brand__colour{filter:brightness(1.6)}
