@@ -1137,12 +1137,11 @@ body > main{flex:1 0 auto}
 .year__text{margin:4px 0 0;font-size:14px;line-height:1.55;color:var(--ink)}
 .wordmark-abudhabi{display:inline-block;height:1.25em;aspect-ratio:425/76;vertical-align:-0.03em;background-color:currentColor;-webkit-mask:url(assets/abu-dhabi.png) center/contain no-repeat;mask:url(assets/abu-dhabi.png) center/contain no-repeat}
 .logo-novo{--novo:#3e44da;display:inline-flex;align-items:flex-end;gap:.3em;height:1.1em;vertical-align:-0.04em;color:inherit;text-decoration:none;border-radius:4px;outline-offset:3px}
-.logo-novo__arch,.logo-novo__word{display:block;height:100%;background-color:currentColor;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat;transition:transform .35s cubic-bezier(.3,1.6,.5,1),background-color .25s}
+.logo-novo__arch,.logo-novo__word{display:block;height:100%;background-color:currentColor;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
 .logo-novo__arch{aspect-ratio:48/50;background-color:var(--novo);-webkit-mask-image:url(assets/novo-arch.png);mask-image:url(assets/novo-arch.png);transform-origin:50% 100%}
 .logo-novo__word{aspect-ratio:136/50;-webkit-mask-image:url(assets/novo-word.png);mask-image:url(assets/novo-word.png)}
 .logo-novo__go{align-self:center;font-size:.8em;color:var(--novo);opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s;white-space:nowrap}
 .logo-novo:hover .logo-novo__arch,.logo-novo:focus-visible .logo-novo__arch{transform:translateY(-3px) scaleY(1.08)}
-.logo-novo:hover .logo-novo__word,.logo-novo:focus-visible .logo-novo__word{background-color:var(--novo)}
 .logo-novo:hover .logo-novo__go,.logo-novo:focus-visible .logo-novo__go{opacity:1;transform:none}
 [data-time="night"] .logo-novo{--novo:#7a80ff}
 @media (prefers-reduced-motion:reduce){.logo-novo *{transition:none!important}}
