@@ -1132,9 +1132,9 @@ body > main{flex:1 0 auto}
 .chapter__name{margin:6px 0 10px;font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.02em}
 .year{position:relative;display:grid;grid-template-columns:110px 1fr;gap:28px;padding:20px 0 20px;scroll-margin-top:100px}
 .year::before{content:"";position:absolute;left:96px;top:0;bottom:0;width:1px;background:var(--line)}
-.year::after{content:"";position:absolute;left:92px;top:30px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
-.year__num{margin:0;font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
-.year__text{margin:4px 0 0;font-size:18px;line-height:1.55;color:var(--ink)}
+.year::after{content:"";position:absolute;left:92px;top:27px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.year__num{margin:0;font-size:21px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.year__text{margin:4px 0 0;font-size:16px;line-height:1.55;color:var(--ink)}
 .year__photo{max-width:380px;margin-top:16px}
 .year__photo .life-photo__frame{aspect-ratio:4/3}
 .year--empty{padding:12px 0}
@@ -1146,9 +1146,9 @@ body > main{flex:1 0 auto}
     .journey{padding:16px 20px 60px}
   .year{grid-template-columns:64px 1fr;gap:18px}
   .year::before{left:52px}.year::after{left:48px}
-  .year__num{font-size:20px}
+  .year__num{font-size:17px}
   .year--empty .year__num{font-size:16px}
-  .year__text{font-size:16px}
+  .year__text{font-size:15px}
 }
 @media (max-width:760px){
   .year{grid-template-columns:52px 1fr;gap:26px}
