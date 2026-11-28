@@ -222,3 +222,13 @@ if (!reduceMotion) document.querySelectorAll('.svc').forEach(el => svcIO.observe
   years.forEach(y => y.addEventListener('animationend', () => y.classList.remove('is-tapped')));
 
 })();
+
+// story: the 2027 surprise box opens to reveal what's next
+document.querySelectorAll('.surprise').forEach(box => box.addEventListener('click', () => {
+  if (box.classList.contains('is-opening')) return;
+  const reveal = document.getElementById(box.getAttribute('aria-controls'));
+  const open = () => { box.hidden = true; reveal.hidden = false; reveal.focus({ preventScroll: true }); };
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return open();
+  box.classList.add('is-opening');
+  box.querySelector('img').addEventListener('animationend', e => { if (e.animationName === 'gift-open') open(); });
+}));
