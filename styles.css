@@ -1246,3 +1246,11 @@ body > main{flex:1 0 auto}
 .life-love__more .photo-marquee{width:auto;margin-left:0;margin-right:0;padding:12px 0 20px}
 .life-love__more .photo-marquee .life-photo{flex:0 0 280px;width:280px;padding:0 22px 0 0}
 @media (max-width:760px){.life-love__more .photo-marquee .life-photo{flex-basis:62vw;width:62vw;padding-right:14px}}
+/* square polaroid rows (Chennai, sweets, cafés) */
+.travel-videos--square .life-photo__frame{aspect-ratio:1/1}
+.life-year--hero .travel-videos--pair,.travel-videos--pair{grid-template-columns:repeat(2,1fr);max-width:600px}
+@media (max-width:560px){.travel-videos.travel-videos--pair{grid-template-columns:repeat(2,1fr)}}
+/* Never let wide content (e.g. the photo strip's long track) widen the page on phones */
+body > main{min-width:0;width:100%}
+.life-love__more,.life-love__more .photo-marquee{min-width:0;max-width:100%}
+@media (max-width:900px){.life-love{padding-left:20px;padding-right:20px}}
