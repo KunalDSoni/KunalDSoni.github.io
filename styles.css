@@ -1272,3 +1272,23 @@ body > main{min-width:0;width:100%}
 .life-love__more .photo-marquee--natural .life-photo__frame{aspect-ratio:auto;height:clamp(220px,26vw,360px)}
 .life-love__more .photo-marquee--natural .life-photo__frame img{width:auto;height:100%}
 @media (max-width:760px){.life-love__more .photo-marquee--natural .life-photo{flex-basis:auto;width:auto;padding-right:14px}}
+
+/* =====================================================================
+   Photo-strip sections (Louvre, Asha's): one identical style
+   heading on top, strip starts at the heading's left line, same frames, gaps and speed
+   ===================================================================== */
+.life-year--strip .life-year__head--hero,
+.life-love__more .life-year__head--hero,
+.life-love__more .life-year__head--hero[style]{margin-bottom:8px}
+.life-year--strip .photo-marquee,
+.life-love__more .photo-marquee{width:auto;margin-left:0;margin-right:0;padding:12px 0 20px;min-width:0;max-width:100%}
+.life-year--strip .photo-marquee--natural .life-photo,
+.life-love__more .photo-marquee--natural .life-photo{flex:0 0 auto;width:auto;padding:0 24px 0 0}
+.life-year--strip .photo-marquee--natural .life-photo__frame,
+.life-love__more .photo-marquee--natural .life-photo__frame{aspect-ratio:auto;height:clamp(220px,26vw,360px);padding:8px}
+/* same pace: about 4 s per photo */
+.life-love__more .photo-marquee__track{animation-duration:48s}
+@media (max-width:760px){
+  .life-year--strip .photo-marquee--natural .life-photo,
+  .life-love__more .photo-marquee--natural .life-photo{padding-right:14px}
+}
