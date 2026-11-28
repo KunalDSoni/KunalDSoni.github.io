@@ -1232,3 +1232,9 @@ body > main{flex:1 0 auto}
 /* Work intro: one quiet line */
 .work-min__intro{font-size:16px;font-weight:500;line-height:1.5;letter-spacing:0;color:var(--muted);margin:0 0 20px;max-width:none;white-space:nowrap}
 @media (max-width:760px){.work-min__intro{white-space:normal;font-size:15px}}
+/* Asha's: heading sits above the photo strip, never sticky, note beside the title */
+.life-love__more .life-year__head--hero,
+.life-love__more .life-year__head--hero[style]{position:static!important;flex-direction:row!important;align-items:baseline;flex-wrap:wrap;gap:6px 16px;margin-bottom:18px}
+.life-love__more .life-year__note{margin-left:0}
+.photo-marquee{position:relative;z-index:0}
+.life-love .life-love__more{padding-left:0;padding-right:0}
