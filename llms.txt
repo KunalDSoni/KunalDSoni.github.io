@@ -8,3 +8,4 @@
 - [Home](https://kunaldsoni.github.io/): The journey, 2026 back to 2008, year by year
 - [Work](https://kunaldsoni.github.io/work.html): Astratech (BOTIM Ultra), Dopay, Mintoak, Novo, Pedagogy - roles, what I built, key results
 - [Life](https://kunaldsoni.github.io/life.html): Travel, food, and books
+- [Philosophy](https://kunaldsoni.github.io/philosophy.html): What I earn is not only for me; next, funding girls' education
