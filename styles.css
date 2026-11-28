@@ -1343,3 +1343,6 @@ body > main{min-width:0;width:100%}
 .philo__line:last-child{margin-bottom:0}
 @media (max-width:340px){.philo__line{white-space:normal}}
 .journey{padding-bottom:0}
+.emblem-india{display:inline-block;height:1.5em;width:auto;vertical-align:-.3em;margin-left:.15em;margin-top:-.5em}
+.citizen{max-width:1180px;margin:0 auto;padding:8px 40px 48px;text-align:center;font-size:15px;font-weight:600}
+.citizen a{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
